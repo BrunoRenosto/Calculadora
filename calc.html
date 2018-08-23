@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta  charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style media="screen">
+            body{
+              text-align: center;
+              vertical-align:middle;
+              background-color: green;
+              background-image: url(foda.bmp);
+            }
+            h1{
+             color: white;
+             font-size: 65px;
+            }
+            button{
+              background-color: red;
+              border-radius:4px;
+              color:white;
+              width:25%;
+              font-size: 35px;
+            }
+
+
+            input[type=number], select, textarea {
+    width: 100%;
+    height:100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size:45px;
+}
+
+    </style>
+
+
+    <title>Calculadora</title>
+    </head>
+    <body>
+
+      <div>
+        <h1>Alavancas</h1>
+
+        <input type="number" name="fpot" id="b1" placeholder="Fp">  </input>
+        <input type="number" name="dpot" id="b2" placeholder="Dp">
+        <h2>=</h2>
+        <input type="number" name="fres" id="b3" placeholder="Fr">
+        <input type="number" name="dres" id="b4" placeholder="Dr"></br>
+
+        <button type="button" name="button" onclick="clickme()">Calcular</button>
+
+      </div>
+
+        <script type="text/javascript">
+
+          function clickme() {
+          var b1 = null;
+          var b2 = null;
+          var b3 = null;
+          var b4 = null;
+
+           b1 = document.getElementById('b1').value;
+           b2 = document.getElementById('b2').value;
+           b3 = document.getElementById('b3').value;
+           b4 = document.getElementById('b4').value;
+            var x=0;
+            var y=0;
+            var z=0;
+            var w=0;
+            var v1 =0;
+            var v2 = 0;
+            var v3 = 0;
+            var v4 = 0;
+
+
+            if(b1 == 0){
+              x++;
+            }
+
+            if(b2 == 0){
+              y++;
+            }
+
+            if(b3 == 0){
+              z++;
+            }
+
+            if(b4 == 0){
+              w++;
+            }
+
+
+            if(b1 >= 0 && b2 >= 0 && b3 >= 0 && b4 >= 0){
+
+              if((x+y+z+w) != 1 && (x+y+z+w) != 0){
+                alert("Digite 3 valores");
+              }
+
+
+            else if((x+y+z+w) == 0){
+              v1 = b1 * b2;
+              v2 = b3 * b4;
+              if(v1 != v2){
+                alert("Os digitos estão errados")
+              }
+              else{
+                alert("A conta está correta")
+              }
+            }
+
+
+              else if(x == 1){
+                v1 = b3 * b4;
+                b1 = v1 / b2;
+                document.getElementById("b1").value=b1;
+              }
+
+              else if(y == 1){
+                v1 = b3 * b4;
+                b2 = v1 / b1;
+                document.getElementById("b2").value=b2;
+              }
+
+              else if(z == 1){
+                v1 = b1 * b2;
+                b3 = v1 / b4;
+                document.getElementById("b3").value=b3;
+              }
+
+              else if(w == 1){
+                v1= b1 * b2;
+                b4 = v1 / b3;
+                document.getElementById("b4").value=b4;
+              }
+            }
+            else{
+              alert("valores negativos não são aceitos")
+            }
+          }
+
+
+
+        </script>
+
+
+    </body>
+</html>
